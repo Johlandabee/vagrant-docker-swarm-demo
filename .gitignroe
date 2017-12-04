@@ -1,0 +1,4 @@
+.vagrant/
+*.logs
+hosts
+token
