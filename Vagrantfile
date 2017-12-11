@@ -49,7 +49,7 @@ Vagrant.configure("2") do |config|
       i.vm.network "forwarded_port", guest: 8000, host: 8000
       # Visualizer
       i.vm.network "forwarded_port", guest: 8080, host: 8080
-      i.vm.provision "shell", path: "./provision.sh"
+      i.vm.provision "shell", path: "./scripts/provision.sh"
       if File.file?("./hosts") 
         i.vm.provision "file", source: "hosts", destination: "/tmp/hosts"
         i.vm.provision "shell", inline: "cat /tmp/hosts >> /etc/hosts", privileged: true
